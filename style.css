@@ -6,21 +6,82 @@
   box-sizing: border-box;
 }
 
+img {
+  width: 350px;
+}
+
 .hide { display: none; }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: lightgoldenrodyellow;
+.header{ 
+  background-color: rgb(95, 95, 95);
   color: black;
-  padding: 20px;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 100;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  background-color: grey;
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 60px;
+}
+
+table {
+  color: white;
+  background-color: black;
+}
+
+button {
+  font-family: 'Roboto Mono', monospace;
+  background-color: yellow;
+  transition: all linear 0.2s;
+  transition-delay: 0.2s;
+  border-radius: 25px;
+  width: 130px;
+  border: 3px solid black;
+  color: black;
+  cursor: pointer;
+}
+
+button:hover {
+  font-family: 'Roboto Mono', monospace;
+  background-color: white;
+  transition: all linear 0.2s;
+  transition-delay: 0.2s;
+  border-radius: 25px;
+  width: 130px;
+  border: 3px solid black;
+  color: black;
+  cursor: pointer;
+}
+
+.tableTitle {
+  height: 40px;
+  cursor: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+  color: yellow;
+  font-size: 14px;
 }
 
 .container {
   position: relative;
   background-color: white;
-  min-height: 600px;
+  max-width: 1500px;
   border-radius: 6px;
-  overflow: hidden;
 }
 
 table {
@@ -38,6 +99,7 @@ table th {
   border-bottom: 1px solid lightgray;
   user-select: none;
   transition: all linear .11s;
+  background-color: rgb(95, 95, 95);
 }
 
 table th[data-sort] {
@@ -46,7 +108,7 @@ table th[data-sort] {
 
 table th.asc,
 table th.desc {
-    color: lightcoral;
+    color: yellow;
 }
 
 table th[data-sort]:before, 
@@ -62,12 +124,12 @@ table th[data-sort]:after  {
 
 table th[data-sort]:before {
   top: 43px;
-  border-bottom-color: lightcoral;
+  border-bottom-color: yellow;
 } 
 
 table th[data-sort]:after  {
   top: 53px;
-  border-top-color: lightcoral;
+  border-top-color: yellow;
 }
 
 table th.asc:before,
@@ -113,10 +175,13 @@ table tr.remove td {
 }
 
 table td.del {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   cursor: pointer;
   height: 100%;
-  max-width: 4px;
+  max-width: 0px;
   width: 100%;;
   background-color: rgb(255, 62, 62);
   top: 0;
@@ -131,12 +196,11 @@ table tr:hover td.del {
 }
 
 table td.del:hover {
-  padding-right: 60px;
+  padding-right: 20px;
 }
 
 table td.del span {
   display: inline-block;
-  padding-top: 25px;
   padding-left: 20px;
 }
 
@@ -150,4 +214,239 @@ table tr.remove td.del span{
 
 table tr.no-data {
   height: 160px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.benefitBody {
+  padding-top: 60px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleText {
+  text-align: center;
+}
+
+.titleTexttwo {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+
+.benefitContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr
+}
+
+.checkboxText {
+  color: black;
+  cursor: pointer;
+}
+
+#tooltip, #tooltipFour, #tooltipFive, #tooltipSeven, #tooltipTable, #tooltipTablethree, #tooltipTablefour, #tooltipTableseven, #tooltipPoint {
+  position: relative;
+  cursor: pointer;
+}
+
+#tooltipTablethree:hover #tooltipTexttable {
+  top: -540%;
+  visibility: visible;
+  opacity: 1;
+}
+
+#tooltipTablefour:hover #tooltipTexttable {
+  top: -630%;
+  visibility: visible;
+  opacity: 1;
+}
+
+#tooltipTableseven:hover #tooltipTexttable {
+  top: -930%;
+  visibility: visible;
+  opacity: 1;
+}
+
+#tooltipTable:hover #tooltipTexttable {
+  top: -430%;
+  visibility: visible;
+  opacity: 1;
+}
+
+#tooltipPoint:hover #tooltipTextpoint {
+  top: -330%;
+  visibility: visible;
+  opacity: 1;
+}
+
+#tooltipTexttable {
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+  white-space: pre-wrap;
+  padding: 10px 15px;
+  border-radius: 7px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 2000;
+}
+
+#tooltipTextpoint {
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+  white-space: pre-wrap;
+  padding: 10px 15px;
+  border-radius: 7px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 2000;
+}
+
+#tooltipTexttable::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  border: 15px solid;
+  border-color: rgb(255, 255, 255) #0000 #0000 #0000;
+  z-index: 2000;
+}
+
+#pointText {
+  color: lime;
+}
+
+#loungeText {
+  color: greenyellow;
+}
+
+#creditText {
+  color: orange;
+}
+
+#fxText {
+  color: red;
+}
+
+#hotelText {
+  color: slateblue;
+}
+
+#cashbackText {
+  color: crimson;
+}
+
+#bagText {
+  color: silver;
+}
+
+#voucherText {
+  color: lightskyblue;
+}
+
+#insuranceText {
+  color: royalblue;
+}
+
+#airportText {
+  color: lightgoldenrodyellow;
+}
+
+#pointsText {
+  color: lightseagreen;
+}
+
+#tooltipTextpoint::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  border: 15px solid;
+  border-color: rgb(255, 255, 255) #0000 #0000 #0000;
+  z-index: 2000;
+}
+
+#tooltipText {
+  position: absolute;
+  text-align: center;
+  width: 600px;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  white-space: pre-wrap;
+  padding: 10px 15px;
+  border-radius: 7px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#tooltipText::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  border: 15px solid;
+  border-color: #000 #0000 #0000 #0000;
+}
+
+#tooltip:hover #tooltipText {
+  top: -260%;
+  visibility: visible;
+  opacity: 1;
+}
+
+#tooltipFour:hover #tooltipText {
+  top: -310%;
+  visibility: visible;
+  opacity: 1;
+}
+
+#tooltipFive:hover #tooltipText {
+  top: -355%;
+  visibility: visible;
+  opacity: 1;
+}
+
+#tooltipSeven:hover #tooltipText {
+  top: -450%;
+  visibility: visible;
+  opacity: 1;
+}
+
+a:link {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: none;
 }
